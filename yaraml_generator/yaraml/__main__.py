@@ -116,7 +116,7 @@ def main():
         X = pool.map(get_features,malicious_paths + benign_paths)
         y = [1 for i in range(len(malicious_paths))] + [0 for i in range(len(benign_paths))]
 
-        X, X_val, y, y_val = train_test_split(X,y,test_size=args.val_percent)
+        X, X_val, y, y_val = train_test_split(X,y,test_size=args.val_percent,stratify=y)
         saved_data = [X,y,X_val,y_val]
 
         log("Dumping features to pickle file")
