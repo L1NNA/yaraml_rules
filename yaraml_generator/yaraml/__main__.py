@@ -66,7 +66,7 @@ def main():
         help="Use this if you'd like to retrain a model using an extracted feature pickle file.  model_path must point to a directory with saved model parameters.  yaraml will load the pickle file in that directory and train a new model with the parameters you specify with --model_type or --model_instantion.  You can also change --max_features in your retrain.  This is useful in iterating on a yaraml rule until you get to an adequately performant model.")
     parser.add_argument("model_path",default=None,help="New directory to create at which to store model")
     parser.add_argument("rule_name",default=None,help="Name of rule")
-    parser.add_argument("--val_percent",default=0.2,help="Percent of data to hold out for validation",type=float)
+    parser.add_argument("--val_percent",default=0.5,help="Percent of data to hold out for validation",type=float)
     parser.add_argument("--detection_threshold",default=0.5,help="Detection threshold to bake into rule",type=float)
     parser.add_argument("--ignore_saved_features",default=False,action="store_true",help="Ignore cached features, re-extract features")
     parser.add_argument(
